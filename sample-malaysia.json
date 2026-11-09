@@ -1,0 +1,867 @@
+[
+  {
+    "id": "ci-my-hero",
+    "type": "section",
+    "title": "01 - Malaysia Hero",
+    "settings": {
+      "contentWidth": 820,
+      "gap": 0,
+      "backgroundColor": "#FFF3EC",
+      "paddingTop": 46,
+      "paddingRight": 20,
+      "paddingBottom": 46,
+      "paddingLeft": 20,
+      "mobilePaddingTop": 32,
+      "mobilePaddingRight": 14,
+      "mobilePaddingBottom": 32,
+      "mobilePaddingLeft": 14,
+      "marginTop": 0,
+      "marginBottom": 0,
+      "borderRadius": 0,
+      "animation": "none",
+      "customClass": "ci-my-hero"
+    },
+    "columns": [
+      {
+        "id": "ci-my-hero-col",
+        "width": 100,
+        "settings": {
+          "backgroundColor": "rgba(255,255,255,0.45)",
+          "padding": 24,
+          "borderRadius": 20,
+          "verticalAlign": "center"
+        },
+        "elements": [
+          {
+            "id": "ci-my-hero-label",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#B63624",
+              "fontSize": 12,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "MALAYSIA EMPLOYMENT PREPARATION"
+          },
+          {
+            "id": "ci-my-hero-title",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#26334B",
+              "fontSize": 38,
+              "fontWeight": 800,
+              "marginBottom": 16
+            },
+            "content": "মালয়েশিয়ার জন্য সঠিক প্রস্তুতি এখান থেকেই শুরু"
+          },
+          {
+            "id": "ci-my-hero-description",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#5F6773",
+              "fontSize": 18,
+              "fontWeight": 400,
+              "marginBottom": 22
+            },
+            "content": "আপনার জন্য কোন সেক্টর উপযুক্ত, কী কী প্রস্তুতি দরকার এবং কীভাবে পরবর্তী ধাপে এগোবেন—সবকিছু সহজভাবে বুঝে তারপর সিদ্ধান্ত নিন।"
+          },
+          {
+            "id": "ci-my-hero-highlight",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#26334B",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "paddingTop": 18,
+              "paddingRight": 16,
+              "paddingBottom": 18,
+              "paddingLeft": 16,
+              "borderRadius": 12,
+              "marginBottom": 18
+            },
+            "content": "৫টি প্রধান সেক্টর • প্রাথমিক গাইডলাইন • সরাসরি যোগাযোগ"
+          },
+          {
+            "id": "ci-my-hero-call",
+            "type": "button",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#CE2032",
+              "fontSize": 19,
+              "fontWeight": 800,
+              "paddingTop": 18,
+              "paddingRight": 26,
+              "paddingBottom": 18,
+              "paddingLeft": 26,
+              "borderRadius": 10,
+              "marginBottom": 10
+            },
+            "text": "☎ এখনই কথা বলুন",
+            "url": "tel:+8801958044480"
+          },
+          {
+            "id": "ci-my-hero-phone",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#B63624",
+              "fontSize": 17,
+              "fontWeight": 800,
+              "marginBottom": 0
+            },
+            "content": "01958044480"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ci-my-video-main",
+    "type": "section",
+    "title": "02 - Featured Malaysia Video",
+    "settings": {
+      "contentWidth": 820,
+      "gap": 0,
+      "backgroundColor": "#FFF8F3",
+      "paddingTop": 44,
+      "paddingRight": 20,
+      "paddingBottom": 44,
+      "paddingLeft": 20,
+      "mobilePaddingTop": 30,
+      "mobilePaddingRight": 14,
+      "mobilePaddingBottom": 30,
+      "mobilePaddingLeft": 14,
+      "marginTop": 0,
+      "marginBottom": 0,
+      "borderRadius": 0,
+      "animation": "none",
+      "customClass": "ci-my-video-main"
+    },
+    "columns": [
+      {
+        "id": "ci-my-video-main-col",
+        "width": 100,
+        "settings": {
+          "backgroundColor": "rgba(255,255,255,0.45)",
+          "padding": 22,
+          "borderRadius": 20,
+          "verticalAlign": "center"
+        },
+        "elements": [
+          {
+            "id": "ci-my-video-main-label",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#CE2032",
+              "fontSize": 12,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "WATCH BEFORE YOU DECIDE"
+          },
+          {
+            "id": "ci-my-video-main-title",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#111827",
+              "fontSize": 30,
+              "fontWeight": 800,
+              "marginBottom": 14
+            },
+            "content": "ভিডিওতে মালয়েশিয়া সম্পর্কে বিস্তারিত জানুন"
+          },
+          {
+            "id": "ci-my-video-main-description",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#4B5563",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "marginBottom": 22
+            },
+            "content": "YOUR_VIDEO_ID জায়গায় আপনার YouTube ভিডিও ID বসান।"
+          },
+          {
+            "id": "ci-my-video-main-player",
+            "type": "youtube",
+            "settings": {
+              "align": "center",
+              "width": "100%",
+              "aspectRatio": "16:9",
+              "backgroundColor": "#000000",
+              "borderRadius": 16,
+              "autoplay": false,
+              "mute": false,
+              "controls": true,
+              "playsinline": true,
+              "loop": false,
+              "marginBottom": 18
+            },
+            "content": {
+              "videoId": "YOUR_VIDEO_ID",
+              "url": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+              "embedUrl": "https://www.youtube.com/embed/YOUR_VIDEO_ID?playsinline=1&controls=1",
+              "title": "Malaysia Main Explainer"
+            }
+          },
+          {
+            "id": "ci-my-video-main-call",
+            "type": "button",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#CE2032",
+              "fontSize": 18,
+              "fontWeight": 800,
+              "paddingTop": 17,
+              "paddingRight": 24,
+              "paddingBottom": 17,
+              "paddingLeft": 24,
+              "borderRadius": 10,
+              "marginBottom": 0
+            },
+            "text": "☎ ভিডিও দেখে প্রশ্ন থাকলে কল করুন",
+            "url": "tel:+8801958044480"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ci-my-video-reels",
+    "type": "section",
+    "title": "03 - Malaysia Short Videos",
+    "settings": {
+      "contentWidth": 820,
+      "gap": 0,
+      "backgroundColor": "#FFEDE3",
+      "paddingTop": 42,
+      "paddingRight": 20,
+      "paddingBottom": 42,
+      "paddingLeft": 20,
+      "mobilePaddingTop": 30,
+      "mobilePaddingRight": 14,
+      "mobilePaddingBottom": 30,
+      "mobilePaddingLeft": 14,
+      "marginTop": 0,
+      "marginBottom": 0,
+      "borderRadius": 0,
+      "animation": "none",
+      "customClass": "ci-my-video-reels"
+    },
+    "columns": [
+      {
+        "id": "ci-my-video-reels-col",
+        "width": 100,
+        "settings": {
+          "backgroundColor": "transparent",
+          "padding": 0,
+          "borderRadius": 0,
+          "verticalAlign": "center"
+        },
+        "elements": [
+          {
+            "id": "ci-my-reels-label",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#CE2032",
+              "fontSize": 12,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "SHORT VIDEOS / REELS"
+          },
+          {
+            "id": "ci-my-reels-title",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#26334B",
+              "fontSize": 30,
+              "fontWeight": 800,
+              "marginBottom": 20
+            },
+            "content": "ছোট ভিডিওতে প্রয়োজনীয় তথ্য দেখুন"
+          },
+          {
+            "id": "ci-my-reel-title-1",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#26334B",
+              "fontSize": 20,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "ভিডিও 01"
+          },
+          {
+            "id": "ci-my-reel-youtube-1",
+            "type": "youtube",
+            "settings": {
+              "align": "center",
+              "width": "100%",
+              "aspectRatio": "9:16",
+              "backgroundColor": "#000000",
+              "borderRadius": 16,
+              "autoplay": false,
+              "mute": false,
+              "controls": true,
+              "playsinline": true,
+              "loop": false,
+              "marginBottom": 22
+            },
+            "content": {
+              "videoId": "YOUR_SHORT_ID_1",
+              "url": "https://www.youtube.com/watch?v=YOUR_SHORT_ID_1",
+              "embedUrl": "https://www.youtube.com/embed/YOUR_SHORT_ID_1?playsinline=1&controls=1",
+              "title": "Malaysia Short Video 01"
+            }
+          },
+          {
+            "id": "ci-my-reel-title-2",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#26334B",
+              "fontSize": 20,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "ভিডিও 02"
+          },
+          {
+            "id": "ci-my-reel-youtube-2",
+            "type": "youtube",
+            "settings": {
+              "align": "center",
+              "width": "100%",
+              "aspectRatio": "9:16",
+              "backgroundColor": "#000000",
+              "borderRadius": 16,
+              "autoplay": false,
+              "mute": false,
+              "controls": true,
+              "playsinline": true,
+              "loop": false,
+              "marginBottom": 22
+            },
+            "content": {
+              "videoId": "YOUR_SHORT_ID_2",
+              "url": "https://www.youtube.com/watch?v=YOUR_SHORT_ID_2",
+              "embedUrl": "https://www.youtube.com/embed/YOUR_SHORT_ID_2?playsinline=1&controls=1",
+              "title": "Malaysia Short Video 02"
+            }
+          },
+          {
+            "id": "ci-my-reel-title-3",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#26334B",
+              "fontSize": 20,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "ভিডিও 03"
+          },
+          {
+            "id": "ci-my-reel-youtube-3",
+            "type": "youtube",
+            "settings": {
+              "align": "center",
+              "width": "100%",
+              "aspectRatio": "9:16",
+              "backgroundColor": "#000000",
+              "borderRadius": 16,
+              "autoplay": false,
+              "mute": false,
+              "controls": true,
+              "playsinline": true,
+              "loop": false,
+              "marginBottom": 0
+            },
+            "content": {
+              "videoId": "YOUR_SHORT_ID_3",
+              "url": "https://www.youtube.com/watch?v=YOUR_SHORT_ID_3",
+              "embedUrl": "https://www.youtube.com/embed/YOUR_SHORT_ID_3?playsinline=1&controls=1",
+              "title": "Malaysia Short Video 03"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ci-my-eligibility",
+    "type": "section",
+    "title": "04 - Eligibility",
+    "settings": {
+      "contentWidth": 820,
+      "gap": 0,
+      "backgroundColor": "#FFFFFF",
+      "paddingTop": 42,
+      "paddingRight": 20,
+      "paddingBottom": 42,
+      "paddingLeft": 20,
+      "mobilePaddingTop": 30,
+      "mobilePaddingRight": 14,
+      "mobilePaddingBottom": 30,
+      "mobilePaddingLeft": 14,
+      "marginTop": 0,
+      "marginBottom": 0,
+      "borderRadius": 0,
+      "animation": "none",
+      "customClass": "ci-my-eligibility"
+    },
+    "columns": [
+      {
+        "id": "ci-my-eligibility-col",
+        "width": 100,
+        "settings": {
+          "backgroundColor": "transparent",
+          "padding": 0,
+          "borderRadius": 0,
+          "verticalAlign": "center"
+        },
+        "elements": [
+          {
+            "id": "ci-my-eligibility-label",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#CE2032",
+              "fontSize": 12,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "WHO CAN APPLY?"
+          },
+          {
+            "id": "ci-my-eligibility-title",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#111827",
+              "fontSize": 30,
+              "fontWeight": 800,
+              "marginBottom": 16
+            },
+            "content": "আপনার বয়স কি ১৮ থেকে ৫০ বছরের মধ্যে?"
+          },
+          {
+            "id": "ci-my-eligibility-description",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#4B5563",
+              "fontSize": 17,
+              "fontWeight": 400,
+              "marginBottom": 20
+            },
+            "content": "আপনার বয়স, কাজের অভিজ্ঞতা এবং শারীরিক সক্ষমতা অনুযায়ী মালয়েশিয়ার কোন সেক্টরে সুযোগ থাকতে পারে—তা জানতে আমাদের সঙ্গে কথা বলুন।"
+          },
+          {
+            "id": "ci-my-eligibility-age-box",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#111827",
+              "fontSize": 24,
+              "fontWeight": 800,
+              "paddingTop": 18,
+              "paddingRight": 16,
+              "paddingBottom": 18,
+              "paddingLeft": 16,
+              "borderRadius": 12,
+              "marginBottom": 18
+            },
+            "content": "বয়সসীমা: ১৮ – ৫০ বছর"
+          },
+          {
+            "id": "ci-my-eligibility-note",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#6B7280",
+              "fontSize": 13,
+              "fontWeight": 400,
+              "marginBottom": 20
+            },
+            "content": "চূড়ান্ত যোগ্যতা সংশ্লিষ্ট নিয়োগ, কাজের ধরন ও অনুমোদিত শর্তের ওপর নির্ভর করবে।"
+          },
+          {
+            "id": "ci-my-eligibility-call",
+            "type": "button",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#CE2032",
+              "fontSize": 18,
+              "fontWeight": 800,
+              "paddingTop": 17,
+              "paddingRight": 24,
+              "paddingBottom": 17,
+              "paddingLeft": 24,
+              "borderRadius": 10,
+              "marginBottom": 0
+            },
+            "text": "☎ আমি যোগ্য কি না জানতে কল করুন",
+            "url": "tel:+8801958044480"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ci-my-sectors",
+    "type": "section",
+    "title": "05 - Five Recruitment Sectors",
+    "settings": {
+      "contentWidth": 820,
+      "gap": 0,
+      "backgroundColor": "#F9FAFB",
+      "paddingTop": 46,
+      "paddingRight": 20,
+      "paddingBottom": 46,
+      "paddingLeft": 20,
+      "mobilePaddingTop": 32,
+      "mobilePaddingRight": 14,
+      "mobilePaddingBottom": 32,
+      "mobilePaddingLeft": 14,
+      "marginTop": 0,
+      "marginBottom": 0,
+      "borderRadius": 0,
+      "animation": "none",
+      "customClass": "ci-my-sectors"
+    },
+    "columns": [
+      {
+        "id": "ci-my-sectors-col",
+        "width": 100,
+        "settings": {
+          "backgroundColor": "transparent",
+          "padding": 0,
+          "borderRadius": 0,
+          "verticalAlign": "center"
+        },
+        "elements": [
+          {
+            "id": "ci-my-sectors-label",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#CE2032",
+              "fontSize": 12,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "5 RECRUITMENT SECTORS"
+          },
+          {
+            "id": "ci-my-sectors-title",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#111827",
+              "fontSize": 30,
+              "fontWeight": 800,
+              "marginBottom": 14
+            },
+            "content": "মালয়েশিয়ার ৫টি সেক্টরে কর্মী নিয়োগ"
+          },
+          {
+            "id": "ci-my-sectors-description",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#4B5563",
+              "fontSize": 17,
+              "fontWeight": 400,
+              "marginBottom": 24
+            },
+            "content": "আপনার কাজের অভিজ্ঞতা কোন সেক্টরের সঙ্গে মেলে? নিচের তালিকা থেকে নিজের কাজটি মিলিয়ে নিন এবং বর্তমান সুযোগ সম্পর্কে জেনে নিন।"
+          },
+          {
+            "id": "ci-my-sector-construction",
+            "type": "text",
+            "settings": {
+              "align": "left",
+              "color": "#111827",
+              "backgroundColor": "#FFFFFF",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "paddingTop": 17,
+              "paddingRight": 16,
+              "paddingBottom": 17,
+              "paddingLeft": 16,
+              "borderRadius": 10,
+              "marginBottom": 10
+            },
+            "content": "01  Construction — কনস্ট্রাকশন / নির্মাণকাজ"
+          },
+          {
+            "id": "ci-my-sector-service",
+            "type": "text",
+            "settings": {
+              "align": "left",
+              "color": "#111827",
+              "backgroundColor": "#FFFFFF",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "paddingTop": 17,
+              "paddingRight": 16,
+              "paddingBottom": 17,
+              "paddingLeft": 16,
+              "borderRadius": 10,
+              "marginBottom": 10
+            },
+            "content": "02  Service — সার্ভিস সেক্টর"
+          },
+          {
+            "id": "ci-my-sector-agriculture",
+            "type": "text",
+            "settings": {
+              "align": "left",
+              "color": "#111827",
+              "backgroundColor": "#FFFFFF",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "paddingTop": 17,
+              "paddingRight": 16,
+              "paddingBottom": 17,
+              "paddingLeft": 16,
+              "borderRadius": 10,
+              "marginBottom": 10
+            },
+            "content": "03  Agriculture — কৃষি সেক্টর"
+          },
+          {
+            "id": "ci-my-sector-factory",
+            "type": "text",
+            "settings": {
+              "align": "left",
+              "color": "#111827",
+              "backgroundColor": "#FFFFFF",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "paddingTop": 17,
+              "paddingRight": 16,
+              "paddingBottom": 17,
+              "paddingLeft": 16,
+              "borderRadius": 10,
+              "marginBottom": 10
+            },
+            "content": "04  Factory / Manufacturing — ফ্যাক্টরি ও ম্যানুফ্যাকচারিং"
+          },
+          {
+            "id": "ci-my-sector-plantation",
+            "type": "text",
+            "settings": {
+              "align": "left",
+              "color": "#111827",
+              "backgroundColor": "#FFFFFF",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "paddingTop": 17,
+              "paddingRight": 16,
+              "paddingBottom": 17,
+              "paddingLeft": 16,
+              "borderRadius": 10,
+              "marginBottom": 22
+            },
+            "content": "05  Plantation — প্ল্যান্টেশন / বাগান সেক্টর"
+          },
+          {
+            "id": "ci-my-sectors-trigger",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#111827",
+              "fontSize": 23,
+              "fontWeight": 800,
+              "marginBottom": 12
+            },
+            "content": "আপনার কাজের সেক্টরটি পেয়েছেন?"
+          },
+          {
+            "id": "ci-my-sectors-trigger-text",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#4B5563",
+              "fontSize": 16,
+              "fontWeight": 400,
+              "marginBottom": 20
+            },
+            "content": "এবার জেনে নিন আপনার অভিজ্ঞতা অনুযায়ী কোন কাজের সুযোগ রয়েছে এবং কী যোগ্যতা প্রয়োজন।"
+          },
+          {
+            "id": "ci-my-sectors-call",
+            "type": "button",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#CE2032",
+              "fontSize": 18,
+              "fontWeight": 800,
+              "paddingTop": 17,
+              "paddingRight": 24,
+              "paddingBottom": 17,
+              "paddingLeft": 24,
+              "borderRadius": 10,
+              "marginBottom": 0
+            },
+            "text": "☎ আমার সেক্টরের কাজ জানতে কল করুন",
+            "url": "tel:+8801958044480"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ci-my-salary",
+    "type": "section",
+    "title": "06 - Salary Call Conversion",
+    "settings": {
+      "contentWidth": 820,
+      "gap": 0,
+      "backgroundColor": "#111827",
+      "paddingTop": 48,
+      "paddingRight": 20,
+      "paddingBottom": 48,
+      "paddingLeft": 20,
+      "mobilePaddingTop": 34,
+      "mobilePaddingRight": 14,
+      "mobilePaddingBottom": 34,
+      "mobilePaddingLeft": 14,
+      "marginTop": 0,
+      "marginBottom": 0,
+      "borderRadius": 0,
+      "animation": "none",
+      "customClass": "ci-my-salary"
+    },
+    "columns": [
+      {
+        "id": "ci-my-salary-col",
+        "width": 100,
+        "settings": {
+          "backgroundColor": "transparent",
+          "padding": 0,
+          "borderRadius": 0,
+          "verticalAlign": "center"
+        },
+        "elements": [
+          {
+            "id": "ci-my-salary-label",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#F87171",
+              "fontSize": 12,
+              "fontWeight": 800,
+              "marginBottom": 12
+            },
+            "content": "SALARY & JOB DETAILS"
+          },
+          {
+            "id": "ci-my-salary-title",
+            "type": "heading",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "fontSize": 32,
+              "fontWeight": 800,
+              "marginBottom": 14
+            },
+            "content": "আপনার পছন্দের সেক্টরে বেতন কত?"
+          },
+          {
+            "id": "ci-my-salary-description",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#D1D5DB",
+              "fontSize": 17,
+              "fontWeight": 400,
+              "marginBottom": 20
+            },
+            "content": "Construction, Service, Agriculture, Factory ও Plantation—প্রতিটি কাজের বেতন ও শর্ত এক নয়। আপনার পছন্দের সেক্টরের বর্তমান বেতন, কাজের সময়, ওভারটাইম এবং অন্যান্য সুবিধা সম্পর্কে জানতে সরাসরি কথা বলুন।"
+          },
+          {
+            "id": "ci-my-salary-highlight",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#1F2937",
+              "fontSize": 19,
+              "fontWeight": 700,
+              "paddingTop": 18,
+              "paddingRight": 16,
+              "paddingBottom": 18,
+              "paddingLeft": 16,
+              "borderRadius": 10,
+              "marginBottom": 22
+            },
+            "content": "বেতন + ওভারটাইম + থাকা-খাওয়া + অন্যান্য সুবিধা — সংশ্লিষ্ট পদের সম্পূর্ণ তথ্য জেনে নিন।"
+          },
+          {
+            "id": "ci-my-salary-call",
+            "type": "button",
+            "settings": {
+              "align": "center",
+              "color": "#FFFFFF",
+              "backgroundColor": "#CE2032",
+              "fontSize": 20,
+              "fontWeight": 800,
+              "paddingTop": 18,
+              "paddingRight": 28,
+              "paddingBottom": 18,
+              "paddingLeft": 28,
+              "borderRadius": 10,
+              "marginBottom": 12
+            },
+            "text": "☎ বেতন জানতে এখনই কল করুন",
+            "url": "tel:+8801958044480"
+          },
+          {
+            "id": "ci-my-salary-phone",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#FCA5A5",
+              "fontSize": 17,
+              "fontWeight": 800,
+              "marginBottom": 10
+            },
+            "content": "01958044480"
+          },
+          {
+            "id": "ci-my-salary-note",
+            "type": "text",
+            "settings": {
+              "align": "center",
+              "color": "#9CA3AF",
+              "fontSize": 12,
+              "fontWeight": 400,
+              "marginBottom": 0
+            },
+            "content": "বেতন ও অন্যান্য সুবিধা পদ, নিয়োগকর্তা এবং সংশ্লিষ্ট লিখিত নিয়োগের শর্ত অনুযায়ী ভিন্ন হতে পারে।"
+          }
+        ]
+      }
+    ]
+  }
+]
