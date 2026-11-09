@@ -1,0 +1,91 @@
+CREATE TABLE IF NOT EXISTS pages (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  category_key VARCHAR(50) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) NOT NULL UNIQUE,
+  status ENUM('draft','published') NOT NULL DEFAULT 'draft',
+  blocks_json LONGTEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_category (category_key),
+  INDEX idx_status (status)
+);
+
+CREATE TABLE IF NOT EXISTS templates (
+  category_key VARCHAR(50) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  blocks_json LONGTEXT NOT NULL,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS settings (
+  setting_key VARCHAR(100) PRIMARY KEY,
+  setting_value LONGTEXT NULL,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS page_meta (
+  page_id BIGINT UNSIGNED PRIMARY KEY,
+  seo_title VARCHAR(255) NULL,
+  seo_description TEXT NULL,
+  og_image TEXT NULL,
+  favicon_url TEXT NULL,
+  canonical_url TEXT NULL,
+  head_code LONGTEXT NULL,
+  body_end_code LONGTEXT NULL,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_page_meta_page FOREIGN KEY (page_id) REFERENCES pages(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS events (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  page_id BIGINT UNSIGNED NULL,
+  slug VARCHAR(255) NULL,
+  event_name VARCHAR(50) NOT NULL,
+  phone VARCHAR(80) NULL,
+  source VARCHAR(255) NULL,
+  medium VARCHAR(255) NULL,
+  campaign VARCHAR(255) NULL,
+  content VARCHAR(255) NULL,
+  term VARCHAR(255) NULL,
+  referrer TEXT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_event_name (event_name),
+  INDEX idx_event_slug (slug),
+  INDEX idx_event_created (created_at)
+);
+
+CREATE TABLE IF NOT EXISTS form_submissions (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  form_name VARCHAR(255) NOT NULL,
+  data_json LONGTEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_form_name (form_name),
+  INDEX idx_form_created (created_at)
+);
+
+
+CREATE TABLE IF NOT EXISTS media (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  original_name VARCHAR(255) NOT NULL,
+  mime_type VARCHAR(100) NOT NULL,
+  size_bytes INT UNSIGNED NOT NULL,
+  file_data LONGBLOB NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_media_created (created_at)
+);
+
+INSERT INTO settings(setting_key,setting_value) VALUES
+('site_title','Landing CMS Pro'),
+('site_name','Landing CMS Pro'),
+('meta_description','Landing Page CMS'),
+('favicon_url',''),
+('site_logo_url',''),
+('header_enabled','0'),
+('header_html',''),
+('header_css',''),
+('footer_enabled','0'),
+('footer_sticky','0'),
+('footer_html',''),
+('footer_css','')
+ON DUPLICATE KEY UPDATE setting_key=VALUES(setting_key);

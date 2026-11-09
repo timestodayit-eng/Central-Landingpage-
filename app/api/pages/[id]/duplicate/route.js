@@ -1,3 +1,0 @@
-import {NextResponse} from 'next/server';
-import {query} from '@/lib/db';
-export async function POST(req,{params}){ const {id}=await params; const rows=await query('SELECT * FROM pages WHERE id=? LIMIT 1',[id]); if(!rows.length) return NextResponse.json({error:'Not found'},{status:404}); const p=rows[0]; const slug=`${p.slug}-copy-${Date.now().toString().slice(-5)}`; const r=await query(`INSERT INTO pages(category_id,title,slug,status,content_json,seo_title,seo_description,created_at,updated_at) VALUES(?,?,?,?,?,?,?,NOW(),NOW())`,[p.category_id,`${p.title} Copy`,slug,'draft',typeof p.content_json==='string'?p.content_json:JSON.stringify(p.content_json),p.seo_title||'',p.seo_description||'']); return NextResponse.json({id:r.insertId,slug},{status:201}); }

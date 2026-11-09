@@ -1,0 +1,6 @@
+/* Optional visual effects: CSS class names are opt-in. */
+.lc-visual-hover{transition-property:transform,box-shadow,filter,background;transition-duration:260ms;transition-timing-function:ease;will-change:transform}
+.lc-hover-lift:hover{transform:translateY(calc(-1 * var(--lc-hover-y,6px)))}
+.lc-hover-scale:hover{transform:scale(var(--lc-hover-scale,1.03))}
+.lc-hover-glow:hover{filter:drop-shadow(0 12px 22px rgba(223,74,50,.22))}
+@media (prefers-reduced-motion: reduce){.lc-visual-hover{transition:none!important}.lc-visual-hover:hover{transform:none!important;filter:none!important}}

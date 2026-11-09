@@ -1,172 +1,90 @@
 # Landing CMS Pro v5 Complete
 
-A complete rebuild of the landing-page CMS foundation with flexible JSON import, MySQL persistence, page version snapshots, public publishing, video blocks and lead forms.
+Fresh deployment package for Hostinger + GitHub + MySQL.
 
-## Included
+## Main features
+- Single-admin login, no public registration
+- Fixed page categories: Pro, Call, Trust, FOMO, Review
+- Unlimited pages, draft/publish, duplicate, public `/p/[slug]` URLs
+- Unicode/Bangla and English slugs
+- Elementor-style visual builder
+- Section -> columns -> inner section -> elements
+- Heading, Text, Button, Image, YouTube Video, Divider, Spacer, Form, Inner Section, Raw HTML/CSS/JS
+- Desktop and mobile section padding controls
+- **Default section padding = 0 on desktop and mobile**
+- **Default column padding = 0**
+- **Default gap = 0**
+- **Content width = 0 means full width**
+- Global Header editor
+- Global Footer editor + optional sticky footer
+- GTM, Meta Pixel, GA4 and global custom code
+- SEO/page meta settings
+- Analytics/event tracking
+- Visual form builder and form submissions
+- **Image upload + Media Library**
 
-- Next.js + React admin CMS
-- MySQL database schema
-- Password-protected `/admin`
-- Page dashboard
-- Create / edit / duplicate / delete pages
-- Draft / published status
-- Public route: `/p/[slug]`
-- Flexible JSON importer
-- JSON export
-- Builder with addable blocks
-- Inline block JSON editing
-- Preview mode
-- Automatic page version snapshot before every update
-- Lead form storage in MySQL
-- YouTube video blocks
-- Direct MP4 video blocks
-- Image, heading, text, button, divider, spacer, form and custom HTML blocks
-- Sticky call bar rendering
-- Unknown/future JSON block fallback instead of rejecting the whole page
-- Five default landing-page categories
-- Warm glass CSS helper classes
+## Image upload
+Images are stored in MySQL in the `media` table instead of the deployed filesystem. This prevents uploaded images from disappearing after a Hostinger redeploy.
 
-## JSON roots accepted
+Supported: JPG, PNG, WEBP, GIF. Maximum: 4 MB per image.
 
-The importer accepts all of these:
+Use either:
+- Admin -> Media Library
+- Page Builder -> Image element -> Upload / Media Library
 
-1. Direct array: `[ ...sections ]`
-2. `{ "sections": [ ... ] }`
-3. `{ "blocks": [ ... ] }`
-4. A single section/block object
+Uploaded image URLs look like `/media/12`.
 
-The normalizer always converts imported content to:
+## Fresh Hostinger deployment
+1. Create a new GitHub repository.
+2. Upload the **contents** of this folder so `package.json`, `app`, `components`, `lib`, `sql` are in the repository root.
+3. Create a new Hostinger MySQL database and user.
+4. Open phpMyAdmin, select that database, then import `sql/schema-hostinger.sql`.
+5. In Hostinger Web App Environment Variables, add values using `.env.example` as the key list. Do not upload a real `.env` file to GitHub.
+6. Build configuration:
+   - Install: `npm install`
+   - Build: `npm run build`
+   - Output: `.next`
+   - Start: `npm start`
+7. Deploy and open `/admin`.
 
-`section -> columns -> elements`
+## Database connection
+Use the exact full database name, full database username and password shown in Hostinger. The example uses `MYSQL_HOST=127.0.0.1`; if Hostinger explicitly provides a different database host for your web app, use the Hostinger value.
 
-## Supported element types
+An `Access denied for user ...` error is a MySQL credential/permission issue, not a page-builder issue.
 
-- heading
-- text
-- button
-- image
-- youtube
-- video
-- form
-- divider
-- spacer
-- html
-- custom
-- code
-- innersection
-- stickyCallBar
+## Upgrade from v4 without deleting data
+Back up the database first. Then import only:
 
-Common aliases are normalized automatically. Unknown types are preserved inside a safe custom fallback so one unsupported block does not invalidate the whole import.
+`sql/migrate-v4-to-v5.sql`
 
-## Fresh installation
+Do **not** re-import the full schema over an existing database.
 
-1. Create a MySQL database in Hostinger.
-2. Import `sql/schema.sql` in phpMyAdmin.
-3. Copy `.env.example` to `.env.local` locally, or add the same variables to Hostinger environment settings.
-4. Use strong values for `DB_PASSWORD`, `ADMIN_PASSWORD` and `ADMIN_SESSION_TOKEN`.
-5. Install dependencies:
+## Header / footer
+Admin -> Header / Footer / Tracking.
 
-```bash
-npm install
-```
+The editor saves these settings in the existing `settings` table. Footer HTML/CSS is rendered on published landing pages by `app/p/layout.js` through `components/GlobalChrome.js`.
 
-6. Local development:
+## Form builder
+Add a `Form` element in the visual builder. Fields can be added/removed visually and support Text, Phone, Email, Number, Date and Textarea. Submissions are stored in `form_submissions` and can be viewed from Admin -> Form Submissions.
 
-```bash
-npm run dev
-```
+## Security note
+Never commit database passwords, admin passwords, or session secrets to GitHub. If credentials have previously appeared in screenshots or chat, rotate them before using this deployment.
 
-7. Production build:
+## v5.1 - Per-domain Site Identity
+When the same GitHub repository is deployed to multiple domains, each deployment can use its own MySQL database and set its own branding from:
 
-```bash
-npm run build
-npm start
-```
+`Admin -> Site Settings -> Site Identity`
 
-8. Check database connection:
+Editable values:
+- Site Title
+- Site Name
+- Meta Description
+- Favicon (upload/select from Media Library)
+- Site Logo (upload/select from Media Library)
 
-`/api/health`
+No code edit or redeploy is needed after saving these values.
 
-9. Login:
+For an existing v5 database, import:
+`sql/migrate-v5-to-v5.1-site-identity.sql`
 
-`/admin/login`
-
-10. Published landing pages appear at:
-
-`/p/your-page-slug`
-
-## Hostinger
-
-Recommended:
-
-- Node.js 22.x
-- Build command: `npm run build`
-- Start command: `npm start`
-- Application root: extracted project root
-
-Set all environment variables before first run.
-
-## Database tables
-
-- `categories` - page categories
-- `pages` - current page content
-- `page_versions` - automatic snapshots before updates
-- `leads` - public form submissions
-- `site_settings` - CMS-level settings
-
-## Security notes
-
-- `/admin`, page APIs and category APIs require the admin session cookie.
-- Public form POST `/api/leads` remains open by design.
-- Lead GET endpoint requires admin authentication.
-- Custom HTML/JS is rendered inside a sandboxed iframe.
-- This package does not include a multi-user/role system. Admin access is controlled by one environment password/session token.
-
-## Video examples
-
-### YouTube
-
-```json
-{
-  "id": "video-1",
-  "type": "youtube",
-  "settings": {
-    "aspectRatio": "16:9",
-    "autoplay": false,
-    "mute": false,
-    "controls": true,
-    "playsinline": true,
-    "loop": false,
-    "borderRadius": 16
-  },
-  "content": {
-    "videoId": "VIDEO_ID",
-    "url": "https://www.youtube.com/watch?v=VIDEO_ID",
-    "embedUrl": "https://www.youtube.com/embed/VIDEO_ID",
-    "title": "Video title"
-  }
-}
-```
-
-### MP4 / Reels
-
-```json
-{
-  "id": "reel-1",
-  "type": "video",
-  "settings": {
-    "aspectRatio": "9:16",
-    "autoplay": false,
-    "muted": true,
-    "controls": true,
-    "playsInline": true,
-    "loop": true,
-    "borderRadius": 16
-  },
-  "videoUrl": "https://example.com/reel.mp4"
-}
-```
-
-## Important
-
-This is a complete source-code package for the CMS workflow described above. It has been assembled and structurally checked in the current environment, but a real production deployment still requires your Hostinger MySQL credentials and an `npm install` / `npm run build` in the deployment environment.
+The settings table is key/value based, so this migration does not alter or delete existing pages, templates, media, forms, analytics, header or footer settings.

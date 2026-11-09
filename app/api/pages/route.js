@@ -1,15 +1,3 @@
-import {NextResponse} from 'next/server';
-import {query} from '@/lib/db';
-import {normalizeBuilderJson} from '@/lib/builderCompat';
-
-export async function GET(){
-  const rows=await query(`SELECT p.id,p.title,p.slug,p.status,p.category_id,p.updated_at,c.name category_name FROM pages p LEFT JOIN categories c ON c.id=p.category_id ORDER BY p.updated_at DESC`);
-  return NextResponse.json(rows);
-}
-export async function POST(req){
-  const b=await req.json();
-  if(!b.title||!b.slug) return NextResponse.json({error:'title and slug required'},{status:400});
-  let sections=[]; try{ sections=normalizeBuilderJson(b.content_json||[]); }catch(e){ return NextResponse.json({error:e.message},{status:400}); }
-  const r=await query(`INSERT INTO pages(category_id,title,slug,status,content_json,seo_title,seo_description,created_at,updated_at) VALUES(?,?,?,?,?,?,?,NOW(),NOW())`,[b.category_id||null,b.title,b.slug,b.status||'draft',JSON.stringify(sections),b.seo_title||'',b.seo_description||'']);
-  return NextResponse.json({id:r.insertId},{status:201});
-}
+import { NextResponse } from 'next/server';import { getAdminSession } from '../../../lib/admin-auth';import { getDb } from '../../../lib/db';import { normalizeMeta } from '../../../lib/content';
+function slugify(v){return String(v||'').trim().toLowerCase().normalize('NFKC').replace(/[^\p{L}\p{N}\s-]/gu,'').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'')}
+export async function POST(req){if(!getAdminSession())return NextResponse.json({error:'Unauthorized'},{status:401});try{const b=await req.json();const db=getDb();const base=slugify(b.slug||b.title)||'page';let slug=base;const [exists]=await db.query('SELECT id FROM pages WHERE slug=? LIMIT 1',[slug]);if(exists.length)slug=`${base}-${Date.now().toString().slice(-6)}`;const [r]=await db.query('INSERT INTO pages(category_key,title,slug,status,blocks_json) VALUES(?,?,?,?,?)',[b.category_key,b.title||'Untitled Page',slug,b.status||'draft',JSON.stringify(b.blocks||[])]);const m=normalizeMeta(b.meta);await db.query(`INSERT INTO page_meta(page_id,seo_title,seo_description,og_image,favicon_url,canonical_url,head_code,body_end_code) VALUES(?,?,?,?,?,?,?,?)`,[r.insertId,m.seo_title,m.seo_description,m.og_image,m.favicon_url,m.canonical_url,m.head_code,m.body_end_code]);return NextResponse.json({id:r.insertId,slug})}catch(e){return NextResponse.json({error:e.message},{status:500})}}

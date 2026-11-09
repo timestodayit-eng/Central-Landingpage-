@@ -1,24 +1,5 @@
-import {notFound} from 'next/navigation';
-import {query} from '@/lib/db';
-import BlockRenderer from '@/components/BlockRenderer';
-
+import { notFound } from 'next/navigation';import { getDb } from '../../../lib/db';import { safeJson } from '../../../lib/content';import BlockRenderer from '../../../components/BlockRenderer';import LandingTracker from '../../../components/LandingTracker';import GlobalCodeInjector from '../../../components/GlobalCodeInjector';
 export const dynamic='force-dynamic';
-
-async function getPage(slug){
-  const rows=await query(`SELECT * FROM pages WHERE slug=? AND status='published' LIMIT 1`,[slug]);
-  if(!rows.length) return null;
-  const p=rows[0];
-  try{p.content_json=typeof p.content_json==='string'?JSON.parse(p.content_json):p.content_json;}catch{p.content_json=[];}
-  return p;
-}
-
-export async function generateMetadata({params}){
-  const {slug}=await params; const p=await getPage(slug).catch(()=>null);
-  if(!p) return {title:'Landing Page'};
-  return {title:p.seo_title||p.title,description:p.seo_description||''};
-}
-
-export default async function PublicPage({params}){
-  const {slug}=await params; const p=await getPage(slug); if(!p) notFound();
-  return <main className="public-page">{(p.content_json||[]).map((b,i)=><BlockRenderer key={b.id||i} block={b}/>)}</main>;
-}
+async function getPage(slug){const db=getDb();const [rows]=await db.query(`SELECT p.id,p.title,p.slug,p.blocks_json,m.seo_title,m.seo_description,m.og_image,m.favicon_url,m.canonical_url,m.head_code,m.body_end_code FROM pages p LEFT JOIN page_meta m ON m.page_id=p.id WHERE p.slug=? AND p.status='published' LIMIT 1`,[slug]);return rows[0]||null}
+export async function generateMetadata({params}){const page=await getPage(params.slug);if(!page)return {};const title=page.seo_title||page.title;const description=page.seo_description||'';return {title,description,alternates:page.canonical_url?{canonical:page.canonical_url}:undefined,openGraph:{title,description,images:page.og_image?[page.og_image]:[]},icons:page.favicon_url?{icon:page.favicon_url}:undefined};}
+export default async function PublicPage({params}){const page=await getPage(params.slug);if(!page)return notFound();const blocks=safeJson(page.blocks_json,[]);return <main className="public-page"><LandingTracker pageId={page.id} slug={page.slug}/><GlobalCodeInjector pageHeadCode={page.head_code||''} pageBodyEndCode={page.body_end_code||''}/>{blocks.map((b,i)=><BlockRenderer key={b.id||i} block={b}/>)}</main>}
